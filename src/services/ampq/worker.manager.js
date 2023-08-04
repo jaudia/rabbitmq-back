@@ -5,6 +5,7 @@ import * as secondWorker from './workers/worker.js';
 // Queue workers
 import * as helloWorker from './workers/hello.worker.js';
 import * as byeWorker from './workers/bye.worker.js';
+import { queuesList } from './queuesList.js';
 
 
 export const init = () => {
@@ -12,7 +13,7 @@ export const init = () => {
     helloWorker.init();
     byeWorker.init();
 
-    // 
-    firstWorker.init('helloqueue', helloWorker.messageReceivedEvent);
-    secondWorker.init('byequeue', byeWorker.messageReceivedEvent);
+    // Prepare callbacks
+    firstWorker.init(queuesList.HELLO, helloWorker.messageReceivedEvent);
+    secondWorker.init(queuesList.BYE, byeWorker.messageReceivedEvent);
 };

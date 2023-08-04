@@ -1,7 +1,7 @@
 {
   "name": "rabbitmq-back",
   "version": "1.0.0",
-  "description": "",
+  "description": "RabbitMQ simple channel",
   "main": "app.js",
   "type": "module",
   "scripts": {

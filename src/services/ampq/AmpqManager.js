@@ -14,19 +14,19 @@ export class AmpqManager {
 
                 this._connection = await amqp.connect('amqp://localhost');
 
-                console.log('rabbitmq conectado')
+                console.log('rabbitmq connected!')
             }
 
             if (!this._channel) {
 
                 this._channel = await this._connection.createChannel();
 
-                console.log('channel conectado')
+                console.log('channel connected!')
             }
 
         } catch (error) {
 
-            console.error('Error al conectar a RabbitMQ:', error);
+            console.error('Error to connect to RabbitMQ:', error);
 
             throw error;
         }

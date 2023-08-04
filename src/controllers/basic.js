@@ -5,20 +5,21 @@ export const hello = async (req, res) => {
 
     try {
 
-
         await AmpqManager.connectRabbitMQ();
 
-        const { campo } = req.body;
+        const { someField = 'anything' } = req.body;
 
-        AmpqManager.sendMessageToQueue(queuesList.HELLO, campo);
+        const msg = `HELLO!! this your message -> ${someField}`
 
-        console.log('Mensaje enviado a RabbitMQ desde el backend:', campo);
+        AmpqManager.sendMessageToQueue(queuesList.HELLO, msg);
+
+        console.log('Message sent to RabbitMQ from backend/hello:', msg);
 
         res.status(200).json({ success: true });
 
     } catch (error) {
 
-        console.error('Error al enviar el mensaje a RabbitMQ desde el backend/hello:', error);
+        console.error('Error to send message to RabbitMQ from backend/hello:', error);
 
         res.status(500).json({ success: false, error: 'Error al enviar el mensaje' });
     }
@@ -30,20 +31,21 @@ export const bye = async (req, res) => {
 
     try {
 
-
         await AmpqManager.connectRabbitMQ();
 
-        const { campo } = req.body;
+        const { someField = 'anything' } = req.body;
 
-        AmpqManager.sendMessageToQueue(queuesList.BYE, campo);
+        const msg = `HELLO!! this your message -> ${someField}`
 
-        console.log('Mensaje enviado a RabbitMQ desde el backend/bye:', campo);
+        AmpqManager.sendMessageToQueue(queuesList.BYE, msg);
+
+        console.log('Message sent to RabbitMQ from backend/bye:', msg);
 
         res.status(200).json({ success: true });
 
     } catch (error) {
 
-        console.error('Error al enviar el mensaje a RabbitMQ desde el backend:', error);
+        console.error('Error to send message to RabbitMQ from backend/bye:', error);
 
         res.status(500).json({ success: false, error: 'Error al enviar el mensaje' });
     }
