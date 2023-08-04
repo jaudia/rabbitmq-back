@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "type": "module",
   "scripts": {
+    "dev": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/jaudia/rabbitmq-back/issues"
   },
-  "homepage": "https://github.com/jaudia/rabbitmq-back#readme"
+  "homepage": "https://github.com/jaudia/rabbitmq-back#readme",
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "colors": "^1.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
