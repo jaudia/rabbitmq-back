@@ -1,6 +1,5 @@
-import { AmpqManager } from "../services/ampq/AmpqManager";
-
-import { queuesList } from "../services/ampq/queuesList";
+import { AmpqManager } from "../services/ampq/AmpqManager.js";
+import { queuesList } from "../services/ampq/queuesList.js";
 
 export const hello = async (req, res) => {
 

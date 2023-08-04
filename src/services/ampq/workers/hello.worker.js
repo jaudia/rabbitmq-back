@@ -1,4 +1,4 @@
-import { queuesList } from "../queuesList";
+import { queuesList } from "../queuesList.js";
 
 let queue;
 

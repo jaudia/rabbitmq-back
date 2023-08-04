@@ -1,4 +1,4 @@
-import { AmpqManager } from "../AmpqManager";
+import { AmpqManager } from "../AmpqManager.js";
 
 export const init = async (queueName, callbackEvent) => {
 

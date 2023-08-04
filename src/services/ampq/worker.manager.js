@@ -1,10 +1,10 @@
 // workers
-import firstWorker from './workers/worker';
-import secondWorker from './workers/worker';
+import * as firstWorker from './workers/worker.js';
+import * as secondWorker from './workers/worker.js';
 
 // Queue workers
-import helloWorker from './workers/hello.worker';
-import byeWorker from './workers/bye.worker';
+import * as helloWorker from './workers/hello.worker.js';
+import * as byeWorker from './workers/bye.worker.js';
 
 
 export const init = () => {

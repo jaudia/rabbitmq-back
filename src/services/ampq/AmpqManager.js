@@ -12,14 +12,14 @@ export class AmpqManager {
         try {
             if (!this._connection) {
 
-                _connection = await amqp.connect('amqp://localhost');
+                this._connection = await amqp.connect('amqp://localhost');
 
                 console.log('rabbitmq conectado')
             }
 
             if (!this._channel) {
 
-                this._channel = await connection.createChannel();
+                this._channel = await this._connection.createChannel();
 
                 console.log('channel conectado')
             }
@@ -40,7 +40,7 @@ export class AmpqManager {
 
         this._channel.sendToQueue(queueName, Buffer.from(message));
 
-        this._console.log("[x] Sent %s", message);
+        console.log("[x] Sent %s", message);
     };
 
     static consumeFromQueue(queueName, cb) {

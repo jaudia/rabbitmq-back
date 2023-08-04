@@ -2,7 +2,7 @@
 import { Router } from 'express';
 
 // Modules
-import ctrller from '../controllers/basic.js';
+import * as ctrller from '../controllers/basic.js';
 
 
 const router = Router();
@@ -12,7 +12,7 @@ router.post('/hello',
 );
 
 router.post('/bye',
-    bye
+    ctrller.bye
 );
 
 

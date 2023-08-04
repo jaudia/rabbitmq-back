@@ -6,7 +6,7 @@ import 'colors';
 // Routes
 import basicRoutes from './routes/basic.js';
 
-import workerManager from './services/ampq/worker.manager.js';
+import * as workerManager from './services/ampq/worker.manager.js';
 
 
 const subRoute = '/api';
