@@ -3,10 +3,10 @@ import express from 'express';
 import cors from 'cors';;
 import 'colors';
 
-
-
 // Routes
 import basicRoutes from './routes/basic.js';
+
+import workerManager from './services/ampq/worker.manager.js';
 
 
 const subRoute = '/api';
@@ -19,14 +19,17 @@ export class Server {
 
         this.app = express();
 
-        this.port = 3001;
+        this.port = 3001;            
 
         this.apiPaths = {
             basic: `${subRoute}/basic`
-        }
+        }        
 
         // Middlewares
         this.middlewares();
+
+        // workers
+        workerManager.init();
 
         // App routes
         this.routes();

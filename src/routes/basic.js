@@ -2,29 +2,18 @@
 import { Router } from 'express';
 
 // Modules
-import { add } from '../controllers/basic.js';
+import ctrller from '../controllers/basic.js';
 
 
 const router = Router();
 
-router.post('/',
-    add
+router.post('/hello',
+    ctrller.hello
 );
 
-// router.get('/:id',
-//     getProduct
-// );
-
-// router.get('/',
-//     getAll
-// );
-// router.delete('/:id',
-//     deleteProduct
-// )
-
-// router.put('/:id',
-//     updateProduct
-// );
+router.post('/bye',
+    bye
+);
 
 
 
